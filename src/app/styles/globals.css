@@ -1,0 +1,27 @@
+/* globals.css */
+
+/* Tailwind base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset margin and padding for all elements */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set background color to black and ensure full height */
+html,
+body {
+  height: 100%;
+  background-color: black;
+  color: white; /* Set default text color to white */
+}
+
+body {
+  font-family: "Montserrat", sans-serif; /* Apply Montserrat font */
+}
