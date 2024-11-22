@@ -1,70 +1,57 @@
+// src/app/components/Navbar.js
 "use client";
 
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
-  Link,
-  Button,
-} from "@nextui-org/react";
-import { useState } from "react";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
-export default function CustomNavbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const handleCollapseChange = (key) => {
-    setIsMenuOpen(key === "1");
-  };
-
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
-
+const Navbar = () => {
   return (
-    <Navbar isBlurred variant="sticky">
+    <header
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        backgroundColor: "black",
+        zIndex: 1000,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "0.5rem 1rem",
+      }}
+    >
+      {/* Logo */}
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <Link href="/">
+          <Image
+            src="/logo.svg"
+            alt="Logo"
+            width={170}
+            height={70}
+            priority
+            style={{ cursor: "pointer" }}
+            backgroundColor="black"
+          />
+        </Link>
+      </div>
 
-      <Navbar.Brand>
-        <img src="/media-logo.png" alt="Logo" width={40} height={40} />
-      </Navbar.Brand>
-
-      <NavbarContent className="sm:hidden" justify="start">
-        <NavbarMenuToggle />
-      </NavbarContent>
-
-
-      <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              className="w-full"
-              href="#"
-              size="lg"
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
-    </Navbar>
+      {/* Hamburger Menu */}
+      <button
+        style={{
+          backgroundColor: "transparent",
+          border: "none",
+          cursor: "pointer",
+          color: "#12FFC6",
+          fontSize: "2.5rem",
+          marginRight: "60px",
+        }}
+        aria-label="Menu"
+      >
+        ☰
+      </button>
+    </header>
   );
-}
+};
+
+export default Navbar;

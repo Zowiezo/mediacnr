@@ -1,0 +1,132 @@
+/* Strategy & Consulting Section Styles */
+.strategy-section {
+  background-color: black;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Heading Style */
+.strategy-section .heading {
+  font-size: 2.6rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100;
+  color: #ffffff;
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+  position: absolute;
+  left: 145px;
+  bottom: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.strategy-section .heading-dot {
+  color: #2dad00;
+  font-size: 4rem;
+  margin-left: 10px;
+}
+
+/* Slider Container */
+.strategy-section .slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 5rem;
+  margin-left: 3.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  max-width: 80%;
+}
+
+/* Slider Button */
+.strategy-section .slider-btn {
+  background-color: black;
+  border: none;
+  color: #2dad00;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.strategy-section .slider-btn:hover {
+  color: white;
+}
+
+/* Card Style */
+.strategy-section .card {
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 172, 34, 0.824);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  min-width: 250px;
+  max-width: 400px;
+  min-height: 250px;
+  max-height: 400px;
+  padding: 1rem;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  margin-right: 3rem;
+  margin-left: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.strategy-section .card:hover {
+  box-shadow: 0 4px 20px rgb(9, 255, 0);
+}
+
+.strategy-section .card h3 {
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+
+.strategy-section .card p {
+  font-size: 1rem;
+}
+
+/* Slider Navigation (Dots) */
+.strategy-section .slider-navigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8rem;
+}
+
+.strategy-section .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #504979;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.strategy-section .dot.active {
+  background-color: #2dad00;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2.5rem;
+    top: 70%;
+  }
+
+  .slider-container {
+    margin-top: 5rem;
+  }
+
+  .card {
+    min-width: 250px;
+  }
+}

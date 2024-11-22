@@ -1,0 +1,140 @@
+/* Contact Us Section Styles */
+.contact-section {
+  background-color: #000000;
+  color: white;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+/* Heading Style */
+.heading {
+  font-size: 7.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100;
+  color: #12ffc6;
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+  position: absolute;
+  left: 230px;
+  bottom: 7%;
+  display: flex;
+  align-items: center;
+}
+
+/* Contact Info */
+.contact-info {
+  text-align: center;
+  margin-right: 35%;
+  /* padding-bottom: 5%; */
+  position: absolute;
+  /* line-height: -10%; */
+  gap: 5rem;
+}
+
+.contact-info p {
+  font-size: 2rem;
+  margin-top: 10%;
+}
+
+.contact-info a {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  margin-top: 10%;
+}
+
+.contact-info a:hover {
+  color: #12ffc6;
+}
+
+.social-icons {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.social-icons svg {
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.social-icons svg:hover {
+  color: #12ffc6;
+}
+
+/* Contact Form Card */
+.contact-form-card {
+  background-color: black;
+  border-radius: 60px;
+  box-shadow: 0 4px 8px rgba(0, 253, 194, 0.8);
+  padding: 2.3rem;
+  width: 23rem;
+  max-width: 600px;
+  text-align: left;
+  margin-left: 40%;
+  position: absolute;
+}
+
+/* Form Labels and Inputs */
+.contact-form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: #007e04;
+  color: black;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  color: white;
+  /* align-self: center; */
+  margin-left: 30%;
+}
+
+.submit-btn:hover {
+  background-color: #00ff00;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2rem;
+    top: 70%;
+  }
+
+  .contact-form-card {
+    width: 90%;
+  }
+
+  .social-icons svg {
+    font-size: 1.5rem;
+  }
+}

@@ -9,7 +9,7 @@ module.exports = {
   ],
   themes: {
         "black": {
-          extend: "dark", // <- inherit default values from dark theme
+          extend: "dark",
           colors: {
             background: "#000000",
             foreground: "#ffffff",
@@ -18,7 +18,7 @@ module.exports = {
               100: "#CFFFE1",
               200: "#A0FFCC",
               300: "#70FFC1",
-              400: "##4DFFC3",
+              400: "#4DFFC3",
               500: "#12FFC6",
               600: "#0DDBBD",
               700: "#09B7AF",

@@ -1,0 +1,138 @@
+/* Marketing & Digital Marketing Section Styles */
+.marketing-section {
+  background-color: #000000 !important;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  width: "100%";
+}
+
+/* Heading Style */
+.marketing-section .heading {
+  font-size: 2.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100;
+  color: white;
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+  position: absolute;
+  left: 136px;
+  bottom: 11%;
+  display: flex;
+  align-items: center;
+}
+
+.marketing-section .heading-dot {
+  color: #ffae12;
+  font-size: 4rem;
+  margin-left: 10px;
+}
+
+/* Slider Container */
+.marketing-section .slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 5rem;
+  margin-left: 3.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  max-width: 80%;
+}
+
+/* Slider Button */
+.marketing-section .slider-btn {
+  background-color: black;
+  border: none;
+  color: #ffae12;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.slider-btn:hover {
+  color: white;
+}
+
+/* Card Style */
+.marketing-section .card {
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(255, 174, 18, 0.824);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  min-width: 250px;
+  max-width: 400px;
+  min-height: 250px;
+  max-height: 400px;
+  padding: 1rem;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  margin-right: 3rem;
+  margin-left: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.marketing-section .card:hover {
+  box-shadow: 0 4px 20px rgb(255, 174, 18);
+}
+
+.marketing-section .card h3 {
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+
+.marketing-section .card p {
+  font-size: 1rem;
+}
+
+/* Slider Navigation (Dots) */
+.marketing-section .slider-navigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8rem;
+}
+
+.marketing-section .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #605e3e;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.marketing-section .dot.active {
+  background-color: #ffae12;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2.5rem;
+    top: 70%;
+  }
+
+  .slider-container {
+    margin-top: 5rem;
+  }
+
+  .card {
+    min-width: 250px;
+  }
+}
+
+section {
+  color: inherit !important;
+  padding: 0 !important;
+}

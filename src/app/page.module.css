@@ -2,20 +2,32 @@
 
 /* Fullscreen container */
 .container {
-  overflow: hidden;
   font-family: "Montserrat", sans-serif;
-  margin: 0px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 /* Landing Section */
 .landingSection {
-  background: black;
-  height: 100vh;
+  background-color: black;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
+  padding: 2rem;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.landingSection:last-child,
+.aboutSection:last-child,
+.missionSection:last-child,
+.teamSection:last-child,
+.servicesSection:last-child,
+.contactSection:last-child {
+  border-bottom: none; /* Remove the border for the last section */
 }
 
 .logoWrapper {
@@ -25,57 +37,17 @@
 .logo {
   max-width: 100%;
   height: auto;
+  object-fit: contain;
 }
 
-/* Scroll Link */
-.scrollWrapper {
-  position: absolute;
-  bottom: 20px;
-  z-index: 2;
-  text-align: center;
-  font-size: 16px;
-}
-
-/* .scrollLink {
-  color: white;
-  text-decoration: none;
-}
-
-.scrollLink span {
-  display: block;
-  font-size: 24px;
-  margin-bottom: 5px;
-} */
-
-/* Animated Dots */
-/* .animatedBackground {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  overflow: hidden;
-} */
-
-/* .dot {
-  width: 10px;
-  height: 10px;
-  background: linear-gradient(45deg, #ff6ec4, #7873f5);
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
-
-/* About Section */
-.aboutSection {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: black;
-  color: white;
+/* Add a thin gray border between each section */
+.aboutSection,
+.missionSection,
+.teamSection,
+.servicesSection,
+.contactSection {
+  padding: 2rem;
+  border-bottom: 0.5px solid #7f7f7f; /* Thin gray border */
+  color: inherit !important;
+  padding: 0 !important;
 }
