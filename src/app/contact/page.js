@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import "../styles/ContactUs.css";

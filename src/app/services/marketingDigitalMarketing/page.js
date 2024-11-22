@@ -3,7 +3,7 @@
 import MarketingDigitalMarketing from "../../components/MarketingDigitalMarketing";
 import "../../styles/globals.css";
 
-const MarketingDigitalMarketing = () => {
+const MarketingDigitalMarketingPage = () => {
   return (
     <div>
       <MarketingDigitalMarketing />{" "}

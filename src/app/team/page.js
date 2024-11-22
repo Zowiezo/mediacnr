@@ -79,13 +79,12 @@ const Team = () => {
           <h3
             style={{
               color: "white",
-              // marginTop: "1.5rem",
               fontSize: "1.2rem",
               marginTop: "3rem",
               marginLeft: "3rem",
             }}
           >
-            Reneilwe "Reyn" Mgida{" "}
+            Reneilwe &quot;Reyn&quot; Mgida
           </h3>
           <p
             style={{
@@ -174,7 +173,7 @@ const Team = () => {
               marginLeft: "3rem",
             }}
           >
-            Zoleka "Zowie" Kubheka
+            Zoleka &quot;Zowie&quot; Kubheka
           </h3>
           <p
             style={{
