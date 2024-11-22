@@ -1,47 +1,86 @@
-/* Navbar.module.css */
-
+/* Navbar container */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #000;
+  background-color: black;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  z-index: 1000;
+  padding: 0.5rem 2rem;
 }
 
-.logo img {
-  width: 40px;
-  height: 40px;
-}
-
-.hamburger {
+/* Logo wrapper */
+.logoWrapper {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 25px;
+  align-items: center;
+}
+
+.logo {
+  max-width: 170px;
+  height: auto;
   cursor: pointer;
 }
 
-.bar {
-  background-color: #12ffc6; /* Hamburger color */
-  height: 4px;
+/* Menu Button */
+.menuButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 3rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover effect for Menu Button */
+.menuButton:hover {
+  color: #12ffc6;
+  text-shadow: 0 0 8px #12ffc6, 0 0 15px #12ffc6;
+}
+
+/* 'X' icon styling */
+.closeIcon {
+  color: red;
+  font-size: 3rem;
+  font-weight: bold;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Full Page Menu */
+.fullPageMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  border-radius: 5px;
-}
-
-.hamburger.open .bar:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-
-.hamburger.open .bar:nth-child(2) {
+  height: 100%;
+  background-color: black;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  z-index: 999;
   opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.hamburger.open .bar:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
+/* Show menu when open */
+.fullPageMenu.openMenu {
+  display: flex;
+  opacity: 1;
+}
+
+/* Links in the menu */
+.navLink {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navLink:hover {
+  color: #12ffc6;
+  text-shadow: 0 0 8px #12ffc6, 0 0 15px #12ffc6;
 }

@@ -1,8 +1,12 @@
+"use client";
+
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "../styles/MarketingDigitalMarketing.css";
 
 const MarketingDigitalMarketing = () => {
+  const router = useRouter();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const servicesData = [
@@ -59,6 +63,11 @@ const MarketingDigitalMarketing = () => {
     }
   };
 
+  // Function to navigate back to "Services" screen
+  const goBack = () => {
+    router.push("/services");
+  };
+
   return (
     <section className="marketing-section">
       {/* Heading */}
@@ -100,6 +109,15 @@ const MarketingDigitalMarketing = () => {
           ></div>
         ))}
       </div>
+
+      {/* Back Button in Bottom Right */}
+      <button
+        className="back-btn"
+        onClick={goBack}
+        aria-label="Back to Services"
+      >
+        ← Services
+      </button>
     </section>
   );
 };

@@ -69,8 +69,8 @@ const Team = () => {
             }}
           >
             <Image
-              src="/team-member1.jpg"
-              alt="Team Member 1"
+              src="/zuki.svg"
+              alt="Reyn CEO"
               width={250}
               height={250}
               style={{ objectFit: "cover" }}
@@ -108,7 +108,7 @@ const Team = () => {
             }}
           >
             <a
-              href="#"
+              href="https://www.instagram.com/"
               style={{ color: "#12FFC6" }}
               target="_blank"
               rel="noopener noreferrer"
@@ -116,7 +116,7 @@ const Team = () => {
               <FaInstagram size={24} />
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/"
               style={{ color: "#12FFC6" }}
               target="_blank"
               rel="noopener noreferrer"
@@ -124,7 +124,7 @@ const Team = () => {
               <FaFacebook size={24} />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/reneilwe-mgida"
               style={{ color: "#12FFC6" }}
               target="_blank"
               rel="noopener noreferrer"
@@ -158,8 +158,8 @@ const Team = () => {
             }}
           >
             <Image
-              src="/team-member2.jpg"
-              alt="Team Member 2"
+              src="/zowie.svg"
+              alt="zowie CTO"
               width={250}
               height={250}
               style={{ objectFit: "cover" }}
@@ -197,7 +197,7 @@ const Team = () => {
             }}
           >
             <a
-              href="#"
+              href="https://www.instagram.com/zowie_codes_/"
               style={{ color: "#12FFC6" }}
               target="_blank"
               rel="noopener noreferrer"
@@ -205,7 +205,7 @@ const Team = () => {
               <FaInstagram size={24} />
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/ZolekaZowieKubheka"
               style={{ color: "#12FFC6" }}
               target="_blank"
               rel="noopener noreferrer"
@@ -213,7 +213,7 @@ const Team = () => {
               <FaFacebook size={24} />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/zolekakubheka/"
               style={{ color: "#12FFC6" }}
               target="_blank"
               rel="noopener noreferrer"

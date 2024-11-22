@@ -1,28 +1,25 @@
-// src/app/components/Navbar.js
 "use client";
 
-import React from "react";
-import Image from "next/image";
+import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
-    <header
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        backgroundColor: "black",
-        zIndex: 1000,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "0.5rem 1rem",
-      }}
-    >
+    <header className={styles.navbar}>
       {/* Logo */}
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div className={styles.logoWrapper}>
         <Link href="/">
           <Image
             src="/logo.svg"
@@ -30,26 +27,45 @@ const Navbar = () => {
             width={170}
             height={70}
             priority
-            style={{ cursor: "pointer" }}
-            backgroundColor="black"
+            className={styles.logo}
           />
         </Link>
       </div>
 
-      {/* Hamburger Menu */}
+      {/* Hamburger / Close Button */}
       <button
-        style={{
-          backgroundColor: "transparent",
-          border: "none",
-          cursor: "pointer",
-          color: "#12FFC6",
-          fontSize: "2.5rem",
-          marginRight: "60px",
-        }}
-        aria-label="Menu"
+        className={`${styles.menuButton} ${isMenuOpen ? styles.close : ""}`}
+        onClick={toggleMenu}
+        aria-label="Toggle Menu"
       >
-        ☰
+        {isMenuOpen ? <span className={styles.closeIcon}>✖</span> : "☰"}
       </button>
+
+      {/* Full Page Menu */}
+      <nav
+        className={`${styles.fullPageMenu} ${
+          isMenuOpen ? styles.openMenu : ""
+        }`}
+      >
+        <Link href="/about" className={styles.navLink} onClick={closeMenu}>
+          About Us
+        </Link>
+
+        {/* <Link href="/mission" className={styles.navLink} onClick={closeMenu}>
+          Mission & Vision
+        </Link> */}
+        <Link href="/services" className={styles.navLink} onClick={closeMenu}>
+          Services
+        </Link>
+
+        <Link href="/team" className={styles.navLink} onClick={closeMenu}>
+          Team
+        </Link>
+
+        <Link href="/contact" className={styles.navLink} onClick={closeMenu}>
+          Contact Us
+        </Link>
+      </nav>
     </header>
   );
 };

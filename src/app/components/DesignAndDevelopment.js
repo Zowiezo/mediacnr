@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "../styles/DesignAndDevelopment.css";
 
 const DesignAndDevelopment = () => {
+  const router = useRouter();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const servicesData = [
@@ -51,6 +53,11 @@ const DesignAndDevelopment = () => {
     }
   };
 
+  // Function to navigate back to "Services" screen
+  const goBack = () => {
+    router.push("/services");
+  };
+
   return (
     <section className="design-section">
       {/* Heading */}
@@ -92,6 +99,15 @@ const DesignAndDevelopment = () => {
           ></div>
         ))}
       </div>
+
+      {/* Back Button in Bottom Right */}
+      <button
+        className="back-btn"
+        onClick={goBack}
+        aria-label="Back to Services"
+      >
+        ← Services
+      </button>
     </section>
   );
 };

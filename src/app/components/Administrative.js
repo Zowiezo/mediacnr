@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "../styles/Administrative.css";
 
 const Administrative = () => {
+  const router = useRouter();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const servicesData = [
@@ -41,6 +43,11 @@ const Administrative = () => {
     } else {
       setCurrentSlide(servicesData.length - 2);
     }
+  };
+
+  // Function to navigate back to "Services" screen
+  const goBack = () => {
+    router.push("/services");
   };
 
   return (
@@ -84,6 +91,15 @@ const Administrative = () => {
           ></div>
         ))}
       </div>
+
+      {/* Back Button in Bottom Right */}
+      <button
+        className="back-btn"
+        onClick={goBack}
+        aria-label="Back to Services"
+      >
+        ← Services
+      </button>
     </section>
   );
 };

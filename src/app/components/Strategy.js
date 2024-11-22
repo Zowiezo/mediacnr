@@ -1,10 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "../styles/Strategy.css";
 
 const Strategy = () => {
+  const router = useRouter();
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const servicesData = [
@@ -44,6 +48,11 @@ const Strategy = () => {
     } else {
       setCurrentSlide(servicesData.length - 2); // Loop back to the last slide
     }
+  };
+
+  // Function to navigate back to "Services" screen
+  const goBack = () => {
+    router.push("/services");
   };
 
   return (
@@ -87,6 +96,15 @@ const Strategy = () => {
           ></div>
         ))}
       </div>
+
+      {/* Back Button in Bottom Right */}
+      <button
+        className="back-btn"
+        onClick={goBack}
+        aria-label="Back to Services"
+      >
+        ← Services
+      </button>
     </section>
   );
 };

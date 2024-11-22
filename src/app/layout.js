@@ -3,7 +3,9 @@
 import { NextUIProvider } from "@nextui-org/react";
 import { darkTheme } from "./styles/theme";
 import { Montserrat } from "next/font/google";
-import CustomNavbar from "./components/NavBar";
+import Navbar from "./components/NavBar";
+import Footer from "./components/Footer";
+
 import "./styles/globals.css";
 
 const montserrat = Montserrat({
@@ -17,8 +19,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={montserrat.className}>
         <NextUIProvider theme={darkTheme}>
-          <CustomNavbar />
+          <Navbar />
           {children}
+          {/* <Footer /> */}
         </NextUIProvider>
       </body>
     </html>

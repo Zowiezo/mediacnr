@@ -1,8 +1,13 @@
+"use client";
+
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "../styles/SpecializedServices.css";
 
 const SpecializedServices = () => {
+  const router = useRouter();
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const servicesData = [
@@ -54,6 +59,11 @@ const SpecializedServices = () => {
     }
   };
 
+  // Function to navigate back to "Services" screen
+  const goBack = () => {
+    router.push("/services");
+  };
+
   return (
     <section className="specialized-section">
       {/* Heading */}
@@ -95,6 +105,15 @@ const SpecializedServices = () => {
           ></div>
         ))}
       </div>
+
+      {/* Back Button in Bottom Right */}
+      <button
+        className="back-btn"
+        onClick={goBack}
+        aria-label="Back to Services"
+      >
+        ← Services
+      </button>
     </section>
   );
 };

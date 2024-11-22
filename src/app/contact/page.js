@@ -14,6 +14,8 @@ const ContactUs = () => {
     message: "",
   });
 
+  const [showModal, setShowModal] = useState(false); // State to show the success modal
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -21,8 +23,19 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    alert("Form Submitted!");
+    setShowModal(true); // Show the success modal
+    setFormData({
+      name: "",
+      surname: "",
+      email: "",
+      number: "",
+      requestedServices: "",
+      message: "",
+    }); // Clear the form
+    setTimeout(() => {
+      setShowModal(false); // Auto-hide the modal after 10 seconds
+    }, 10000);
+    // Handle actual form submission logic here
   };
 
   return (
@@ -30,19 +43,13 @@ const ContactUs = () => {
       {/* Heading */}
       <h1 className="heading">Contact Us</h1>
 
-      {/* Contact Info */}
-      <div className="contact-info">
-        <a href="mailto:info@mediacnr.org?subject=Inquiry&body=Hello%2C%20I%20have%20a%20question%20about%20your%20services">
-          info@mediacnr.org
-        </a>
-        <p>
-          Cell: <a href="tel:+27112345678">071 234 5678</a>
+      {/* Introduction Section */}
+      <div className="intro-section">
+        <h2>We’re Here to Help!</h2>
+        <p style={{ marginBottom: "0.1rem" }}>
+          Have questions or need assistance?
         </p>
-        <div className="social-icons">
-          <FaFacebook />
-          <FaInstagram />
-          <FaLinkedin />
-        </div>
+        <p style={{ marginBottom: "1rem" }}>We’d love to hear from you.</p>
       </div>
 
       {/* Contact Form */}
@@ -85,15 +92,14 @@ const ContactUs = () => {
             Number:
             <input
               type="tel"
-              name="cellphone number"
+              name="number"
               value={formData.number}
               onChange={handleChange}
-              // required
               placeholder="071 234 5678"
             />
           </label>
           <label>
-            Requested a Services:
+            Requested a Service:
             <select
               name="requestedServices"
               value={formData.requestedServices}
@@ -119,7 +125,6 @@ const ContactUs = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              required
               placeholder="How may we help you?"
             />
           </label>
@@ -128,6 +133,120 @@ const ContactUs = () => {
           </button>
         </form>
       </div>
+
+      {/* Other Ways to Reach Us */}
+      <div className="other-ways">
+        <div className="ways">
+          {/* Email Us */}
+          <div className="way">
+            <h4
+              style={{
+                color: "#12ffc6",
+                fontWeight: "200",
+                fontSize: "1rem",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Email Us 📧
+            </h4>
+            <p
+              style={{
+                marginBottom: "0.5rem",
+              }}
+            >
+              <a
+                href="mailto:info@mediacnr.org?subject=Enquiry&body=Hi Team,%0D%0A%0D%0AI have a question about your services%0D%0A%0D%0A%0D%0AKind Regards,"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-link"
+              >
+                info@mediacnr.org
+              </a>
+            </p>
+            <p>We typically respond within one to two business days.</p>
+          </div>
+          {/* Call Us */}
+          <div className="way">
+            <h4
+              style={{
+                color: "#12ffc6",
+                fontWeight: "200",
+                fontSize: "1rem",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Call Us 📞
+            </h4>
+            <p
+              style={{
+                marginBottom: "0.5rem",
+              }}
+            >
+              <a href="tel:+27712345678" className="contact-link">
+                +27 71 234 5678
+              </a>
+            </p>
+            <p>Available Monday to Friday, 9 AM - 6 PM</p>
+          </div>
+        </div>
+
+        {/* Follow Us */}
+        <div className="social-icons">
+          <a
+            href="facebook.com/profile.php?id=100069440251881"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebook />
+          </a>
+          <a
+            href="https://www.instagram.com/media.cnr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/yourprofile" // Replace with your actual LinkedIn link
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin />
+          </a>
+        </div>
+      </div>
+
+      {/* Privacy Assurance */}
+      <div className="privacy-assurance">
+        <h4>Privacy Assurance</h4>
+        <p>Your privacy is important to us.</p>
+        <p>We never share your personal information with third parties.</p>
+      </div>
+
+      {/* Success Modal */}
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2
+              style={{
+                marginBottom: "0.7rem",
+                fontWeight: "200",
+                color: "#12ffc6",
+              }}
+            >
+              Thank you for contacting us!
+            </h2>
+            <p>We’ll respond to your inquiry within 24-48 hours. Stay tuned!</p>
+            <button
+              className="close-modal-btn"
+              onClick={() => setShowModal(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

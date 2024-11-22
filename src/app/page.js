@@ -5,7 +5,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import AboutUs from "./about/page";
-import MissionVision from "./mission/page";
+// import MissionVision from "./mission/page";
 import Team from "./team/page";
 import Services from "./services/page";
 import ContactUs from "./contact/page";
@@ -31,19 +31,19 @@ export default function Home() {
         <AboutUs />
       </section>
 
-      <section id="mission-vision" className={styles.missionSection}>
+      {/* <section id="mission" className={styles.missionSection}>
         <MissionVision />
+      </section> */}
+
+      <section id="services" className={styles.servicesSection}>
+        <Services />
       </section>
 
       <section id="team" className={styles.teamSection}>
         <Team />
       </section>
 
-      <section id="services" className={styles.servicesSection}>
-        <Services />
-      </section>
-
-      <section id="contact-us" className={styles.contactSection}>
+      <section id="contact" className={styles.contactSection}>
         <ContactUs />
       </section>
     </div>
