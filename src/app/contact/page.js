@@ -147,7 +147,7 @@ const ContactUs = () => {
                 marginBottom: "0.5rem",
               }}
             >
-              Email Us 📧
+              📧 Email Us
             </h4>
             <p
               style={{
@@ -175,7 +175,7 @@ const ContactUs = () => {
                 marginBottom: "0.5rem",
               }}
             >
-              Call Us 📞
+              📞 Call Us
             </h4>
             <p
               style={{
@@ -186,7 +186,8 @@ const ContactUs = () => {
                 +27 71 234 5678
               </a>
             </p>
-            <p>Available Monday to Friday, 9 AM - 6 PM</p>
+            <p> Monday - Friday</p>
+            <p> 9 AM - 6 PM</p>
           </div>
         </div>
 

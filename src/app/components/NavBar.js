@@ -54,6 +54,7 @@ const Navbar = () => {
         {/* <Link href="/mission" className={styles.navLink} onClick={closeMenu}>
           Mission & Vision
         </Link> */}
+
         <Link href="/services" className={styles.navLink} onClick={closeMenu}>
           Services
         </Link>

@@ -1,0 +1,276 @@
+/* Chatbot Container */
+.chatbot-container {
+  position: fixed; /* Fix the chatbot position */
+  bottom: 1rem; /* Position slightly above the bottom of the screen */
+  right: 1rem; /* Align to the right side */
+  z-index: 50; /* Ensure the chatbot is on top of other elements */
+  width: 100%;
+}
+
+/* Chatbot Toggle Button */
+.chatbot-toggle-btn {
+  background-color: #12ffc6;
+  color: white;
+  padding: 1rem;
+  border-radius: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  margin-left: 85rem;
+}
+
+.chatbot-toggle-btn:hover {
+  background-color: #12ffc6; /* Darker Green */
+}
+
+/* Back Button */
+.back-button {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  margin-bottom: 1rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #ddd;
+}
+
+/* Chatbot UI Styles */
+.chatbot-ui {
+  position: fixed; /* Fixed position */
+  bottom: 5rem; /* Keep the chatbot above the toggle button */
+  right: 1rem;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  padding: 1.5rem;
+  border-radius: 50px; /* Rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 20rem;
+  max-width: 100%;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input fields for user details */
+.chatbot-input {
+  margin-bottom: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+/* Header */
+.chatbot-header {
+  color: #00a07b;
+  /* margin-bottom: 1rem; */
+}
+
+/* Introductory Message */
+.chatbot-message {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Question Text */
+.chatbot-question {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Button Options for Yes/No */
+.option-button-yes {
+  background-color: #00a07b; /* Green for Yes */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  transition: all 0.2s ease;
+  width: 100%;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  border: none;
+}
+
+.option-button-yes:hover {
+  background-color: #218838; /* Darker Green for Yes */
+}
+
+.option-button-no {
+  background-color: #f59e0b; /* Orange for No */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  transition: all 0.2s ease;
+  width: 100%;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  border: none;
+}
+
+.option-button-no:hover {
+  background-color: #d97706; /* Darker Orange for No */
+}
+
+/* Success Message */
+.chatbot-success-message {
+  background-color: #28a745;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Response Styling */
+.chatbot-response {
+  background-color: #e8f5e9;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #388e3c;
+  margin-bottom: 1rem;
+}
+
+/* Final Recommendations Section */
+.chatbot-final-recommendations {
+  /* margin-top: 1.2rem; */
+  background-color: #f1f8e9;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.chatbot-final-recommendations h3 {
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.chatbot-final-recommendations ul {
+  list-style: none;
+  padding: 0;
+}
+
+.chatbot-final-recommendations ul li {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Submit Button for Final Recommendations */
+.chatbot-final-recommendations button {
+  background-color: #00a07b; /* Green color */
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 25px;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.chatbot-final-recommendations button:hover {
+  background-color: #12ff91; /* Slightly darker green */
+}
+
+/* Chatbot Logo */
+.chatbot-logo {
+  width: 120px; /* Adjust the size of the logo */
+  height: auto;
+  margin-left: -7px;
+}
+
+/* Close Button */
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #9d0000;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  padding: 0;
+}
+
+.close-btn:hover {
+  color: #ff0000; /* Red color on hover */
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #000000;
+  color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 255, 198, 0.8);
+  max-width: 400px;
+  width: 90%;
+}
+
+.close-modal-btn {
+  background: #12ffc6;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 1rem;
+}
+
+.close-modal-btn:hover {
+  background-color: #00ff00;
+}
+
+/* Media Query for Mobile */
+@media screen and (max-width: 640px) {
+  .chatbot-ui {
+    width: 90%;
+    bottom: 4rem;
+  }
+
+  .chatbot-toggle-btn {
+    padding: 0.75rem;
+    font-size: 1.25rem;
+  }
+
+  .option-button-yes,
+  .option-button-no {
+    font-size: 0.875rem;
+  }
+
+  .chatbot-final-recommendations {
+    padding: 1rem;
+  }
+
+  .chatbot-final-recommendations ul li {
+    font-size: 0.875rem;
+  }
+
+  .chatbot-final-recommendations button {
+    padding: 0.75rem;
+  }
+}

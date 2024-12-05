@@ -1,5 +1,3 @@
-//src/app/pages/services.js
-
 "use client";
 
 import React from "react";

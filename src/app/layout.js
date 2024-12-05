@@ -1,11 +1,11 @@
-"use client";
+// "use client";
 
 import { NextUIProvider } from "@nextui-org/react";
 import { darkTheme } from "./styles/theme";
 import { Montserrat } from "next/font/google";
 import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
-
+import Chatbot from "./components/Chatbot";
 import "./styles/globals.css";
 
 const montserrat = Montserrat({
@@ -14,14 +14,22 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
+export const metadata = {
+  title: "Media.CNR | Empowering Your Brand",
+  description:
+    "Media.CNR provides innovative marketing solutions to help businesses grow and reach their target audience effectively.",
+};
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={montserrat.className}>
         <NextUIProvider theme={darkTheme}>
           <Navbar />
           {children}
-          {/* <Footer /> */}
+          {/* Chatbot */}
+          <Chatbot />
+          <Footer />
         </NextUIProvider>
       </body>
     </html>

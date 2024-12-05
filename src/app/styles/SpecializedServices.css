@@ -116,9 +116,9 @@
 }
 
 /* Back Button in the bottom right */
-.specialized-section  .back-btn {
+.specialized-section .back-btn {
   position: fixed;
-  bottom: 20px; /* Distance from the bottom */
+  bottom: 90px; /* Distance from the bottom */
   right: 20px; /* Distance from the right */
   background-color: transparent;
   border: none;

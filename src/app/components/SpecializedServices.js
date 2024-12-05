@@ -24,7 +24,7 @@ const SpecializedServices = () => {
     {
       title: "Video Production & Editing",
       description:
-        "Our team offers full-scale video production, from scriptwriting and storyboarding to filming and post-production, ensuring high-quality video content that engages and converts.",
+        "Our team offers full-scale video production, from scriptwriting and story boarding to filming and post-production, ensuring high-quality video content that engages and converts.",
     },
     {
       title: "SEO & Content Marketing",

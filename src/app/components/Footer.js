@@ -1,46 +1,12 @@
-// Footer.js
 import React from "react";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import "../styles/Footer.css";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div className="contact-info">
-          <h4>Contact Us</h4>
-          <p>Email: info@mediacnr.org</p>
-          <p>Phone: +27 71 234 5678</p>
-        </div>
-
-        <div className="social-icons">
-          <h4>Follow Us</h4>
-          <div className="icons">
-            <a
-              href="https://www.facebook.com/mediacnr"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebook />
-            </a>
-            <a
-              href="https://www.instagram.com/mediacnr"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/mediacnr"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin />
-            </a>
-          </div>
-        </div>
-
-        <div className="quick-links">
+        {/* Quick Links Section */}
+        {/* <div className="quick-links">
           <h4>Quick Links</h4>
           <ul>
             <li>
@@ -49,12 +15,64 @@ const Footer = () => {
             <li>
               <a href="/terms-of-service">Terms of Service</a>
             </li>
+            <li>
+              <a href="/about-us">About Us</a>
+            </li>
+            <li>
+              <a href="/contact-us">Contact Us</a>
+            </li>
           </ul>
-        </div>
+        </div> */}
+
+        {/* Contact Info Section */}
+        {/* <div className="contact-info">
+          <h4>Contact Info</h4>
+          <ul>
+            <li>Email: contact@mediacnr.com</li>
+            <li>Phone: +1 800-123-4567</li>
+            <li>Address: 123 Media Blvd, City, Country</li>
+          </ul>
+        </div> */}
+
+        {/* Social Media Section */}
+        {/* <div className="social-icons">
+          <h4>Follow Us</h4>
+          <div className="icons">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div> */}
       </div>
 
+      {/* Footer Bottom */}
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} MediaCNR. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Media.CNR. All rights reserved.</p>
       </div>
     </footer>
   );
