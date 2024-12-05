@@ -6,6 +6,9 @@ import { Montserrat } from "next/font/google";
 import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import "./styles/globals.css";
 
 const montserrat = Montserrat({
@@ -27,6 +30,9 @@ export default function RootLayout({ children }) {
         <NextUIProvider theme={darkTheme}>
           <Navbar />
           {children}
+          <Analytics />
+          <SpeedInsights />
+
           {/* Chatbot */}
           <Chatbot />
           <Footer />
