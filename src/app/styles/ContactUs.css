@@ -1,6 +1,6 @@
 /* Contact Us Section Styles */
 .contact-section {
-  background-color: #000000;
+  background-color: black;
   color: white;
   height: 100vh;
   position: relative;
@@ -9,29 +9,27 @@
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  padding: 2rem 0;
+  padding: 2rem;
 }
 
 /* Heading Style */
 .heading {
-  font-size: 7.5rem;
+  font-size: 7rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 100;
   color: #12ffc6;
   transform: rotate(-90deg);
   transform-origin: left bottom;
   position: absolute;
-  left: 230px;
-  bottom: 7%;
-  display: flex;
-  align-items: center;
+  left: 250px;
+  bottom: 6%;
 }
 
 /* Intro Section */
 .intro-section {
   text-align: center;
   margin-bottom: 1rem;
-  margin-right: 20%;
+  margin-right: 18%;
 }
 
 .intro-section h2 {
@@ -175,6 +173,7 @@
   display: flex;
   justify-content: space-around;
   margin-top: 1rem;
+  gap: 3rem;
 }
 
 .way {
@@ -184,6 +183,8 @@
 .social-icons {
   margin-top: 3rem;
   font-size: 2rem;
+  /* gap: 2rem; */
+  margin-left: 15%;
 }
 
 .social-icons a {
@@ -210,7 +211,7 @@
 .privacy-assurance {
   text-align: center;
   margin-top: 2rem;
-  margin-right: 20%;
+  margin-right: 18%;
 }
 
 .privacy-assurance h4 {
@@ -275,7 +276,7 @@
   }
 
   .heading {
-    font-size: 4rem;
+    font-size: 5rem;
     left: 10px;
     bottom: 20%;
     transform: rotate(0deg);

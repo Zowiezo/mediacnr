@@ -1,0 +1,164 @@
+.servicesSection {
+  position: relative;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Services Heading */
+.servicesHeading {
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+  font-family: "Montserrat", sans-serif;
+  font-size: 8rem;
+  font-weight: 100;
+  color: #12ffc6;
+  position: absolute;
+  left: 250px;
+  bottom: 6%;
+}
+
+/* Services List */
+.servicesList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-left: 20rem;
+}
+
+/* Individual Service Items */
+/* Default Service Item Styling */
+.serviceItem,
+.serviceItemStrategy,
+.serviceItemSpecialized {
+  font-size: 2.5rem;
+  font-weight: 100;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s ease-in-out, color 0.3s ease;
+  padding-right: 1.5rem;
+}
+
+/* Move Strategy & Specialized Services to the right */
+.serviceItemStrategy,
+.serviceItemSpecialized {
+  align-self: flex-end;
+  margin-right: 14rem;
+}
+
+/* Hover Effect */
+.serviceItem:hover,
+.serviceItemStrategy:hover,
+.serviceItemSpecialized:hover {
+  transform: scale(1.05);
+  color: #12ffc6;
+}
+
+/* Colored Dots */
+.dot {
+  font-size: 5rem;
+  margin-left: 10px;
+}
+
+.blue {
+  color: #1263ff;
+}
+
+.green {
+  color: #2dad00;
+}
+
+.purple {
+  color: #de12ff;
+}
+
+.red {
+  color: #ff0000;
+}
+
+.orange {
+  color: #ffa800;
+}
+
+/* === RESPONSIVENESS === */
+
+/* Large Screens */
+@media only screen and (max-width: 1200px) {
+  .servicesHeading {
+    font-size: 9rem;
+    left: 150px;
+    bottom: 10%;
+  }
+
+  .servicesList {
+    margin-left: 12rem;
+  }
+
+  .serviceItemStrategy,
+  .serviceItemSpecialized {
+    margin-right: 6rem;
+  }
+}
+
+/* Medium Screens */
+@media only screen and (max-width: 900px) {
+  .servicesSection {
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .servicesHeading {
+    transform: rotate(0deg);
+    position: static;
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .servicesList {
+    align-items: center;
+    text-align: center;
+  }
+
+  .serviceItem {
+    font-size: 2.5rem;
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .serviceItemStrategy,
+  .serviceItemSpecialized {
+    font-size: 2.5rem;
+    align-self: center;
+    margin-right: 0;
+  }
+
+  .dot {
+    font-size: 4rem;
+  }
+}
+
+/* Small Screens */
+@media only screen and (max-width: 600px) {
+  .servicesHeading {
+    font-size: 5rem;
+  }
+
+  .serviceItem,
+  .serviceItemStrategy,
+  .serviceItemSpecialized {
+    font-size: 2rem;
+  }
+
+  .dot {
+    font-size: 3rem;
+  }
+}

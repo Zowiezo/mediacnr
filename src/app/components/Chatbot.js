@@ -2,13 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import "../styles/Chatbot.css";
 
 const Chatbot = () => {
   const [step, setStep] = useState(0);
   const [responses, setResponses] = useState([]);
   const [showChatbot, setShowChatbot] = useState(false);
-  const [showModal, setShowModal] = useState(false); // For success modal
+  const [showModal, setShowModal] = useState(false);
   const [userDetails, setUserDetails] = useState({
     name: "",
     surname: "",
@@ -28,7 +29,7 @@ const Chatbot = () => {
       id: 2,
       question: "Are you struggling with consistent branding or visuals?",
       options: ["Yes", "No"],
-      response: "Creative & Design Services + Marketing Support",
+      response: "Creative & Design Services & Marketing Support",
     },
     {
       id: 3,
@@ -80,46 +81,56 @@ const Chatbot = () => {
   };
 
   const handleUserDetails = (e) => {
-    setUserDetails({
-      ...userDetails,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleDetailsSubmit = () => {
-    if (Object.values(userDetails).every((field) => field !== "")) {
-      setStep(1);
-      setUserDetails({
-        name: "",
-        surname: "",
-        number: "",
-        email: "",
-        company: "",
-      });
-    } else {
-      alert("Please fill in all fields.");
-    }
-  };
-
-  const handleClose = () => {
-    setShowChatbot(false);
-    setStep(0);
-    setResponses([]);
+    setUserDetails({ ...userDetails, [e.target.name]: e.target.value });
   };
 
   const handleFinalSubmit = () => {
-    // Show the modal upon submission
-    setShowModal(true);
-    setResponses([]);
-    setShowChatbot(false);
-    setStep(0);
-  };
+    // Collect selected services from responses
+    const selectedServices = responses
+      .filter((response) => response.answer === "Yes")
+      .map((response) => response.service)
+      .join(", ");
 
-  const handleBack = () => {
-    if (step > 0) {
-      setStep(step - 1);
-      setResponses((prev) => prev.slice(0, prev.length - 1));
-    }
+    // Collect the feedback from user responses
+    const feedback = responses
+      .map(
+        (response) =>
+          `${steps[response.step - 1].question} Answer: ${response.answer}`
+      )
+      .join("\n");
+
+    // Prepare template parameters
+    const templateParams = {
+      name: userDetails.name,
+      surname: userDetails.surname,
+      number: userDetails.number,
+      email: userDetails.email,
+      company: userDetails.company,
+      services: selectedServices, // List of services selected by the user
+      feedback: feedback, // Detailed feedback
+      to_email: "info@mediacnr.co.za",
+    };
+
+    // Send email using EmailJS
+    emailjs
+      .send(
+        "service_4h9c1ji", // Replace with your service ID
+        "template_3b3qgj7", // Replace with your template ID
+        templateParams,
+        "roYbhd90GtWcwChYM" // Replace with your public key
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          setShowModal(true);
+          setResponses([]); // Reset responses after submission
+          setShowChatbot(false); // Hide the chatbot
+          setStep(0); // Reset the step
+        },
+        (error) => {
+          console.log("FAILED...", error);
+        }
+      );
   };
 
   useEffect(() => {
@@ -134,7 +145,6 @@ const Chatbot = () => {
       >
         💬
       </button>
-
       {showChatbot && (
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -148,20 +158,13 @@ const Chatbot = () => {
               alt="Company Logo"
               className="chatbot-logo"
             />
-            <button onClick={handleClose} className="close-btn">
+            <button onClick={() => setShowChatbot(false)} className="close-btn">
               ✖️
             </button>
           </div>
-
           {step === 0 && (
             <>
-              <div className="chatbot-message">
-                <p style={{ marginBottom: "1rem" }}>Welcome to Media.CNR!</p>
-                <p style={{ marginBottom: "0.2rem" }}>
-                  We’re here to help you with your custom solutions. Please
-                  enter your details below.
-                </p>
-              </div>
+              <p>Welcome to Media.CNR! Please enter your details.</p>
               <input
                 type="text"
                 name="name"
@@ -202,15 +205,11 @@ const Chatbot = () => {
                 onChange={handleUserDetails}
                 className="chatbot-input"
               />
-              <button
-                onClick={handleDetailsSubmit}
-                className="option-button-yes"
-              >
+              <button onClick={() => setStep(1)} className="option-button-yes">
                 Submit
               </button>
             </>
           )}
-
           {step > 0 && step !== "end" && (
             <>
               <p className="chatbot-question">{steps[step - 1].question}</p>
@@ -229,49 +228,40 @@ const Chatbot = () => {
                   </button>
                 ))}
               </div>
-              <button onClick={handleBack} className="back-button">
-                Back
-              </button>
             </>
           )}
-
           {step === "end" && (
-            <div className="chatbot-final-recommendations">
+            <>
               <h3>Your Selected Services:</h3>
               <ul>
                 {responses
-                  .filter((response) => response.answer === "Yes")
-                  .map((response, idx) => (
-                    <li key={idx}>{response.service}</li>
+                  .filter((r) => r.answer === "Yes")
+                  .map((r, idx) => (
+                    <li key={idx}>{r.service}</li>
                   ))}
               </ul>
               <button onClick={handleFinalSubmit} className="option-button-yes">
                 Submit
               </button>
-            </div>
+            </>
           )}
         </motion.div>
       )}
-      {/* Success Modal */}
       {showModal && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <h2
-              style={{
-                marginBottom: "0.7rem",
-                fontWeight: "200",
-                color: "#12ffc6",
-              }}
-            >
-              Thank you for reaching out to us!
-            </h2>
-            <p style={{ marginBottom: "1.2rem" }}>
-              Your inquiry has been successfully submitted.
+            <h2>Thank you for reaching out to us!</h2>
+
+            <p>
+              Your inquiry has been successfully submitted.{" "}
+              <span>
+                {" "}
+                Our team will review your request and respond within 24-48
+                hours.
+              </span>{" "}
+              We look forward to working with you at media.CNR
             </p>
-            <p style={{ marginBottom: "1.2rem" }}>
-              Our team will review your request and respond within 24-48 hours.
-            </p>
-            <p>We look forward to working with you at media.CNR</p>
+
             <button
               className="close-modal-btn"
               onClick={() => setShowModal(false)}

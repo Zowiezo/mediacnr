@@ -2,130 +2,27 @@
 
 import React from "react";
 import Image from "next/image";
-import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import "../styles/Team.css";
 
 const Team = () => {
   return (
-    <section
-      style={{
-        display: "flex",
-        height: "100vh",
-        backgroundColor: "black",
-        color: "white",
-        padding: "2rem",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      {/* Team Heading*/}
-      <div
-        style={{
-          transform: "rotate(-90deg)",
-          transformOrigin: "left bottom",
-          fontFamily: "Montserrat",
-          fontSize: "10rem",
-          fontWeight: 100,
-          color: "#12FFC6",
-          position: "absolute",
-          left: "250px",
-          marginTop: "15%",
-        }}
-      >
-        Team
-      </div>
+    <section className="team-section">
+      {/* Team Heading */}
+      <div className="team-heading">The Team</div>
 
       {/* Team Cards */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          width: "100%",
-          maxWidth: "1200px",
-          marginTop: "1rem",
-          marginLeft: "10rem",
-        }}
-      >
+      <div className="team-cards">
         {/* Card 1 */}
-        <div
-          style={{
-            backgroundColor: "black",
-            width: "250px",
-            padding: "1.5rem",
-            borderRadius: "10px",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5)",
-            textAlign: "center",
-            position: "relative",
-          }}
-        >
-          <div
-            style={{
-              width: "250px",
-              height: "250px",
-              borderRadius: "50%",
-              margin: "0 auto",
-              overflow: "hidden",
-              boxShadow: "0 4px 20px rgba(18, 255, 198, 0.6)",
-            }}
-          >
-            <Image
-              src="/zuki.svg"
-              alt="Reyn CEO"
-              width={250}
-              height={250}
-              style={{ objectFit: "cover" }}
-            />
+        <div className="team-card">
+          <div className="team-image">
+            <Image src="/zuki.svg" alt="Reyn CEO" width={250} height={250} />
           </div>
-          <h3
-            style={{
-              color: "white",
-              fontSize: "1.2rem",
-              marginTop: "3rem",
-              marginLeft: "3rem",
-            }}
-          >
-            Reneilwe &quot;Reyn&quot; Mgida
-          </h3>
-          <p
-            style={{
-              color: "#12FFC6",
-              fontSize: "1rem",
-              marginTop: "1.5rem",
-              marginLeft: "3rem",
-            }}
-          >
-            CEO & Founder
-          </p>
-
-          {/* Social Links (Using React Icons) */}
-          <div
-            style={{
-              marginTop: "1.5rem",
-              display: "flex",
-              justifyContent: "center",
-              gap: "1.5rem",
-              marginLeft: "3rem",
-            }}
-          >
-            {/* <a
-              href="https://www.instagram.com/"
-              style={{ color: "#12FFC6" }}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram size={24} />
-            </a> */}
-            {/* <a
-              href="https://www.facebook.com/"
-              style={{ color: "#12FFC6" }}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebook size={24} />
-            </a> */}
+          <h3 className="team-name">Reneilwe "Reyn" Mgida</h3>
+          <p className="team-role">CEO & Founder</p>
+          <div className="team-socials">
             <a
               href="https://www.linkedin.com/in/reneilwe-mgida"
-              style={{ color: "#12FFC6" }}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -135,86 +32,15 @@ const Team = () => {
         </div>
 
         {/* Card 2 */}
-        <div
-          style={{
-            backgroundColor: "black",
-            width: "250px",
-            padding: "1.5rem",
-            borderRadius: "10px",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-            textAlign: "center",
-            position: "relative",
-            marginRight: "5rem",
-          }}
-        >
-          <div
-            style={{
-              width: "250px",
-              height: "250px",
-              borderRadius: "50%",
-              margin: "0 auto",
-              overflow: "hidden",
-              boxShadow: "0 4px 20px rgba(18, 255, 198, 0.6)",
-            }}
-          >
-            <Image
-              src="/zowie.svg"
-              alt="zowie CTO"
-              width={250}
-              height={250}
-              style={{ objectFit: "cover" }}
-            />
+        <div className="team-card">
+          <div className="team-image">
+            <Image src="/zowie.svg" alt="Zowie CTO" width={250} height={250} />
           </div>
-          <h3
-            style={{
-              color: "white",
-              fontSize: "1.2rem",
-              marginTop: "3rem",
-              marginLeft: "3rem",
-            }}
-          >
-            Zoleka &quot;Zowie&quot; Kubheka
-          </h3>
-          <p
-            style={{
-              color: "#12FFC6",
-              fontSize: "1rem",
-              marginTop: "1.5rem",
-              marginLeft: "3rem",
-            }}
-          >
-            CTO
-          </p>
-
-          {/* Social Links (Using React Icons) */}
-          <div
-            style={{
-              marginTop: "1.5rem",
-              display: "flex",
-              justifyContent: "center",
-              gap: "1.5rem",
-              marginLeft: "3rem",
-            }}
-          >
-            {/* <a
-              href="https://www.instagram.com/zowie_codes_/"
-              style={{ color: "#12FFC6" }}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram size={24} />
-            </a> */}
-            {/* <a
-              href="https://www.facebook.com/ZolekaZowieKubheka"
-              style={{ color: "#12FFC6" }}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebook size={24} />
-            </a> */}
+          <h3 className="team-name">Zoleka "Zowie" Kubheka</h3>
+          <p className="team-role">CTO</p>
+          <div className="team-socials">
             <a
               href="https://www.linkedin.com/in/zolekakubheka/"
-              style={{ color: "#12FFC6" }}
               target="_blank"
               rel="noopener noreferrer"
             >

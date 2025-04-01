@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 import "../styles/ContactUs.css";
 
 const ContactUs = () => {
@@ -14,36 +15,59 @@ const ContactUs = () => {
     message: "",
   });
 
-  const [showModal, setShowModal] = useState(false); // State to show the success modal
+  const [showModal, setShowModal] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setShowModal(true); // Show the success modal
-    setFormData({
-      name: "",
-      surname: "",
-      email: "",
-      number: "",
-      requestedServices: "",
-      message: "",
-    }); // Clear the form
-    setTimeout(() => {
-      setShowModal(false); // Auto-hide the modal after 10 seconds
-    }, 10000);
-    // Handle actual form submission logic here
+
+    const emailParams = {
+      name: formData.name,
+      surname: formData.surname,
+      email: formData.email,
+      number: formData.number,
+      requestedServices: formData.requestedServices,
+      message: formData.message,
+    };
+
+    try {
+      const response = await emailjs.send(
+        "service_4h9c1ji", // Replace with your EmailJS service ID
+        "template_xjawtoa", // Replace with your EmailJS template ID
+        emailParams,
+        "roYbhd90GtWcwChYM" // Replace with your EmailJS public key
+      );
+
+      if (response.status === 200) {
+        setShowModal(true);
+        setFormData({
+          name: "",
+          surname: "",
+          email: "",
+          number: "",
+          requestedServices: "",
+          message: "",
+        });
+
+        setTimeout(() => {
+          setShowModal(false);
+        }, 10000);
+      }
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setError("Failed to send the message. Please try again later.");
+    }
   };
 
   return (
     <section className="contact-section">
-      {/* Heading */}
       <h1 className="heading">Contact Us</h1>
 
-      {/* Introduction Section */}
       <div className="intro-section">
         <h2>We’re Here to Help!</h2>
         <p style={{ marginBottom: "0.1rem" }}>
@@ -52,7 +76,6 @@ const ContactUs = () => {
         <p style={{ marginBottom: "1rem" }}>We’d love to hear from you.</p>
       </div>
 
-      {/* Contact Form */}
       <div className="contact-form-card">
         <form onSubmit={handleSubmit} className="contact-form">
           <label>
@@ -85,7 +108,7 @@ const ContactUs = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              placeholder="info@mediacnr.org"
+              placeholder="info@mediacnr.co.za"
             />
           </label>
           <label>
@@ -99,7 +122,7 @@ const ContactUs = () => {
             />
           </label>
           <label>
-            Requested a Service:
+            Requested Service:
             <select
               name="requestedServices"
               value={formData.requestedServices}
@@ -132,12 +155,11 @@ const ContactUs = () => {
             Submit
           </button>
         </form>
+        {error && <p className="error-message">{error}</p>}
       </div>
 
-      {/* Other Ways to Reach Us */}
       <div className="other-ways">
         <div className="ways">
-          {/* Email Us */}
           <div className="way">
             <h4
               style={{
@@ -149,23 +171,13 @@ const ContactUs = () => {
             >
               📧 Email Us
             </h4>
-            <p
-              style={{
-                marginBottom: "0.5rem",
-              }}
-            >
-              <a
-                href="mailto:info@mediacnr.org?subject=Enquiry&body=Hi Team,%0D%0A%0D%0AI have a question about your services%0D%0A%0D%0A%0D%0AKind Regards,"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-link"
-              >
-                info@mediacnr.org
+            <p>
+              <a href="mailto:info@mediacnr.co.za" className="contact-link">
+                info@mediacnr.co.za
               </a>
             </p>
             <p>We typically respond within one to two business days.</p>
           </div>
-          {/* Call Us */}
           <div className="way">
             <h4
               style={{
@@ -177,11 +189,7 @@ const ContactUs = () => {
             >
               📞 Call Us
             </h4>
-            <p
-              style={{
-                marginBottom: "0.5rem",
-              }}
-            >
+            <p>
               <a href="tel:+27712345678" className="contact-link">
                 +27 71 234 5678
               </a>
@@ -191,7 +199,6 @@ const ContactUs = () => {
           </div>
         </div>
 
-        {/* Follow Us */}
         <div className="social-icons">
           <a
             href="https://facebook.com/profile.php?id=100069440251881"
@@ -207,25 +214,15 @@ const ContactUs = () => {
           >
             <FaInstagram />
           </a>
-
-          {/* <a
-            href="https://www.linkedin.com/in/yourprofile" // Replace with your actual LinkedIn link
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin />
-          </a> */}
         </div>
       </div>
 
-      {/* Privacy Assurance */}
       <div className="privacy-assurance">
         <h4>Privacy Assurance</h4>
         <p>Your privacy is important to us.</p>
         <p>We never share your personal information with third parties.</p>
       </div>
 
-      {/* Success Modal */}
       {showModal && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -238,7 +235,7 @@ const ContactUs = () => {
             >
               Thank you for contacting us!
             </h2>
-            <p>We’ll respond to your inquiry within 24-48 hours. Stay tuned!</p>
+            <p>We’ll respond to your inquiry within 24-48 hours.</p>
             <button
               className="close-modal-btn"
               onClick={() => setShowModal(false)}
