@@ -8,6 +8,7 @@
   align-items: center;
   flex-direction: column;
   overflow: hidden;
+  padding: 20px; /* Added padding for smaller screens */
 }
 
 /* Heading Style */
@@ -42,6 +43,8 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   max-width: 80%;
+  width: 100%; /* Ensure the slider fills the screen */
+  gap: 20px; /* Added gap for better spacing */
 }
 
 /* Slider Button */
@@ -150,18 +153,83 @@
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .heading {
     font-size: 2.5rem;
     top: 70%;
+    left: 50px; /* Adjust left for better positioning */
+    bottom: 15%;
   }
 
   .slider-container {
     margin-top: 5rem;
+    margin-left: 0; /* Remove the left margin */
+    justify-content: center;
   }
 
   .card {
-    min-width: 250px;
+    min-width: 230px; /* Adjust for smaller screens */
+    max-width: 320px; /* Adjust for smaller screens */
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2rem;
+    top: 75%; /* Adjust for better positioning */
+    left: 25px;
+  }
+
+  .slider-container {
+    margin-top: 3rem;
+    margin-left: 0;
+    justify-content: center;
+    max-width: 100%; /* Ensure it fits the screen */
+  }
+
+  .card {
+    min-width: 180px; /* Smaller cards */
+    max-width: 280px; /* Smaller cards */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .slider-btn {
+    font-size: 1.2rem; /* Adjust button size */
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.5rem;
+    top: 80%; /* Adjust further for small screens */
+    left: 10px;
+  }
+
+  .slider-container {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .card {
+    min-width: 150px; /* Further reduced width */
+    max-width: 220px; /* Further reduced width */
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .slider-btn {
+    font-size: 1rem; /* Smaller button size */
+  }
+
+  .back-btn {
+    bottom: 30px; /* Adjust bottom position */
+    right: 15px; /* Adjust right position */
   }
 }
 

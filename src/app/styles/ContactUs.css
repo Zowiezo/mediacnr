@@ -266,3 +266,94 @@
 .close-modal-btn:hover {
   background-color: #00ff00;
 }
+
+/* Media Query for Mobile */
+@media screen and (max-width: 640px) {
+  .contact-section {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .heading {
+    font-size: 4rem;
+    left: 10px;
+    bottom: 20%;
+    transform: rotate(0deg);
+  }
+
+  .intro-section {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .intro-section h2 {
+    font-size: 2rem;
+  }
+
+  .intro-section p {
+    font-size: 1rem;
+  }
+
+  .contact-info {
+    margin-right: 0;
+    gap: 2rem;
+    position: static;
+  }
+
+  .contact-info p {
+    font-size: 1.5rem;
+  }
+
+  .contact-info a {
+    font-size: 1.5rem;
+  }
+
+  .social-icons {
+    font-size: 1.5rem;
+  }
+
+  .contact-form-card {
+    width: 90%;
+    max-width: none;
+    margin-left: 0;
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  .contact-form label {
+    font-size: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .other-ways {
+    margin-right: 0;
+  }
+
+  .ways {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .social-icons svg {
+    font-size: 1.5rem;
+  }
+
+  .privacy-assurance h4 {
+    font-size: 1.2rem;
+  }
+
+  .privacy-assurance p {
+    font-size: 0.9rem;
+  }
+}

@@ -8,7 +8,7 @@
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  width: "100%";
+  width: 100%;
 }
 
 /* Heading Style */
@@ -119,8 +119,8 @@
 /* Back Button in the bottom right */
 .back-btn {
   position: fixed;
-  bottom: 90px; /* Distance from the bottom */
-  right: 20px; /* Distance from the right */
+  bottom: 90px;
+  right: 20px;
   background-color: transparent;
   border: none;
   color: #ffae12;
@@ -133,13 +133,11 @@
   z-index: 1100;
 }
 
-/* Hover effect for back button */
 .back-btn:hover {
   color: #ffffff;
   text-shadow: 0 0 8px #12ffc6, 0 0 15px #12ffc6;
 }
 
-/* General button styles for mobile */
 .back-btn:focus {
   outline: none;
 }
@@ -155,20 +153,26 @@
   .heading {
     font-size: 2.5rem;
     top: 70%;
+    left: 10px; /* Adjust left position */
   }
 
   .slider-container {
     margin-top: 5rem;
+    margin-left: 1rem; /* Reduce margin for mobile */
+    max-width: 90%; /* Increased width for smaller screens */
   }
 
   .card {
-    min-width: 250px;
+    min-width: 230px; /* Slightly smaller cards */
+    margin-right: 1.5rem; /* Adjust card spacing */
+    margin-left: 1.5rem;
+    margin-top: 2rem; /* Reduced top margin */
+    margin-bottom: 3rem; /* Adjust bottom margin */
   }
-}
 
-section {
-  color: inherit !important;
-  padding: 0 !important;
+  .slider-btn {
+    font-size: 1.2rem; /* Smaller button on mobile */
+  }
 }
 
 @keyframes slide-in {

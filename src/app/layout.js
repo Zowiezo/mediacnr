@@ -1,6 +1,6 @@
 // "use client";
 
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import { darkTheme } from "./styles/theme";
 import { Montserrat } from "next/font/google";
 import Navbar from "./components/NavBar";
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={montserrat.className}>
-        <NextUIProvider theme={darkTheme}>
+        <HeroUIProvider theme={darkTheme}>
           <Navbar />
           {children}
           <Analytics />
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
           {/* Chatbot */}
           <Chatbot />
           <Footer />
-        </NextUIProvider>
+        </HeroUIProvider>
       </body>
     </html>
   );

@@ -165,6 +165,29 @@
   }
 }
 
+/* For smaller screens */
+@media (max-width: 480px) {
+  .heading {
+    font-size: 2rem;
+    top: 60%;
+  }
+
+  .slider-container {
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+  }
+
+  .card {
+    min-width: 220px;
+    max-width: 350px;
+    margin: 1rem;
+  }
+
+  .slider-btn {
+    font-size: 1.2rem;
+  }
+}
+
 @keyframes slide-in {
   0% {
     right: -100px;

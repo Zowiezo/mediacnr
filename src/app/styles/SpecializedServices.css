@@ -118,8 +118,8 @@
 /* Back Button in the bottom right */
 .specialized-section .back-btn {
   position: fixed;
-  bottom: 90px; /* Distance from the bottom */
-  right: 20px; /* Distance from the right */
+  bottom: 90px;
+  right: 20px;
   background-color: transparent;
   border: none;
   color: #c60000;
@@ -132,18 +132,16 @@
   z-index: 1100;
 }
 
-/* Hover effect for back button */
-.back-btn:hover {
+.specialized-section .back-btn:hover {
   color: #ffffff;
   text-shadow: 0 0 8px #12ffc6, 0 0 15px #12ffc6;
 }
 
-/* General button styles for mobile */
-.back-btn:focus {
+.specialized-section .back-btn:focus {
   outline: none;
 }
 
-.back-btn {
+.specialized-section .back-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,20 +152,26 @@
   .heading {
     font-size: 2.5rem;
     top: 70%;
+    left: 10px;
   }
 
   .slider-container {
     margin-top: 5rem;
+    margin-left: 1rem;
+    max-width: 90%;
   }
 
   .card {
-    min-width: 250px;
+    min-width: 230px;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
   }
-}
 
-section {
-  color: inherit !important;
-  padding: 0 !important;
+  .slider-btn {
+    font-size: 1.2rem;
+  }
 }
 
 @keyframes slide-in {
@@ -179,6 +183,6 @@ section {
   }
 }
 
-.back-btn {
+.specialized-section .back-btn {
   animation: slide-in 0.3s ease-in-out;
 }

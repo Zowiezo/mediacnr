@@ -255,6 +255,8 @@
   .chatbot-toggle-btn {
     padding: 0.75rem;
     font-size: 1.25rem;
+    margin-left: 0; /* Center the button on mobile */
+    right: 1rem;
   }
 
   .option-button-yes,
@@ -272,5 +274,19 @@
 
   .chatbot-final-recommendations button {
     padding: 0.75rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .chatbot-logo {
+    width: 100px; /* Adjust logo size for small screens */
+  }
+
+  .close-btn {
+    top: 1rem; /* Adjust the close button position */
+    right: 1rem;
   }
 }

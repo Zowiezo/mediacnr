@@ -194,7 +194,7 @@ const ContactUs = () => {
         {/* Follow Us */}
         <div className="social-icons">
           <a
-            href="facebook.com/profile.php?id=100069440251881"
+            href="https://facebook.com/profile.php?id=100069440251881"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -208,13 +208,13 @@ const ContactUs = () => {
             <FaInstagram />
           </a>
 
-          <a
+          {/* <a
             href="https://www.linkedin.com/in/yourprofile" // Replace with your actual LinkedIn link
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaLinkedin />
-          </a>
+          </a> */}
         </div>
       </div>
 

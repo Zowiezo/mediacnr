@@ -18,7 +18,7 @@ const Team = () => {
         alignItems: "center",
       }}
     >
-      {/* Team Heading (Similar to About Us and Mission & Vision) */}
+      {/* Team Heading*/}
       <div
         style={{
           transform: "rotate(-90deg)",
@@ -107,22 +107,22 @@ const Team = () => {
               marginLeft: "3rem",
             }}
           >
-            <a
+            {/* <a
               href="https://www.instagram.com/"
               style={{ color: "#12FFC6" }}
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaInstagram size={24} />
-            </a>
-            <a
+            </a> */}
+            {/* <a
               href="https://www.facebook.com/"
               style={{ color: "#12FFC6" }}
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaFacebook size={24} />
-            </a>
+            </a> */}
             <a
               href="https://www.linkedin.com/in/reneilwe-mgida"
               style={{ color: "#12FFC6" }}
@@ -196,22 +196,22 @@ const Team = () => {
               marginLeft: "3rem",
             }}
           >
-            <a
+            {/* <a
               href="https://www.instagram.com/zowie_codes_/"
               style={{ color: "#12FFC6" }}
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaInstagram size={24} />
-            </a>
-            <a
+            </a> */}
+            {/* <a
               href="https://www.facebook.com/ZolekaZowieKubheka"
               style={{ color: "#12FFC6" }}
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaFacebook size={24} />
-            </a>
+            </a> */}
             <a
               href="https://www.linkedin.com/in/zolekakubheka/"
               style={{ color: "#12FFC6" }}
