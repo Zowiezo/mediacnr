@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import "../styles/Chatbot.css";
@@ -153,10 +154,12 @@ const Chatbot = () => {
           className="chatbot-ui"
         >
           <div className="chatbot-header">
-            <img
+            <Image
               src="/logo-white.svg"
               alt="Company Logo"
               className="chatbot-logo"
+              width={100}
+              height={50}
             />
             <button onClick={() => setShowChatbot(false)} className="close-btn">
               ✖️

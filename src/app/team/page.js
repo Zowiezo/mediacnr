@@ -18,7 +18,7 @@ const Team = () => {
           <div className="team-image">
             <Image src="/zuki.svg" alt="Reyn CEO" width={250} height={250} />
           </div>
-          <h3 className="team-name">Reneilwe "Reyn" Mgida</h3>
+          <h3 className="team-name">Reneilwe &quot;Reyn&quot; Mgida</h3>
           <p className="team-role">CEO & Founder</p>
           <div className="team-socials">
             <a
@@ -36,7 +36,7 @@ const Team = () => {
           <div className="team-image">
             <Image src="/zowie.svg" alt="Zowie CTO" width={250} height={250} />
           </div>
-          <h3 className="team-name">Zoleka "Zowie" Kubheka</h3>
+          <h3 className="team-name">Zoleka &quot;Zowie&quot; Kubheka</h3>
           <p className="team-role">CTO</p>
           <div className="team-socials">
             <a
